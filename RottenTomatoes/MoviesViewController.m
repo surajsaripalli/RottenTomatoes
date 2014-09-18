@@ -17,6 +17,7 @@
     UIRefreshControl *refresh;
 
 }
+@property (weak, nonatomic) IBOutlet UILabel *errorMsg;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *movies;
 @property () NSInteger numberOfTouches;
@@ -65,7 +66,7 @@
          
          // Hide the loading View
          
-         if(!connectionError)
+        if(!connectionError)
          {
              NSDictionary *object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
              self.movies = object[@"movies"];
@@ -75,7 +76,10 @@
              //NSLog(@"movies: %@", self.movies);
          }
          else {
-             // Display error alert
+             
+             self.errorMsg.hidden = false;
+             self.tableView.hidden = true;
+             self.errorMsg.text = @"Network Error";
          }
      }];
 

@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoviesViewController">
             <connections>
+                <outlet property="errorMsg" destination="gUl-nQ-P3e" id="S0r-et-9i9"/>
                 <outlet property="tableView" destination="WXk-z3-xfr" id="Fc6-mk-Ofg"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -23,6 +24,14 @@
                         <outletCollection property="gestureRecognizers" destination="Ojh-90-qd9" appends="YES" id="cyZ-9b-xDj"/>
                     </connections>
                 </tableView>
+                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUl-nQ-P3e">
+                    <rect key="frame" x="0.0" y="48" width="320" height="61"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.65430658360000005" green="1" blue="0.82144259740000003" alpha="1" colorSpace="calibratedRGB"/>
             <gestureRecognizers/>
