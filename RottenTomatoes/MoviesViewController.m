@@ -13,6 +13,10 @@
 
 
 @interface MoviesViewController ()
+{
+    UIRefreshControl *refresh;
+
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *movies;
 @property () NSInteger numberOfTouches;
@@ -44,8 +48,13 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnTableView:)];
     [self.tableView addGestureRecognizer:tap];
     
+    refresh = [[UIRefreshControl alloc] init];
     
-    // Added a loading view
+    [self.tableView addSubview:refresh];
+    
+    [refresh addTarget:self action:@selector(loadPage) forControlEvents:UIControlEventValueChanged];
+    
+    
     
     NSString *url = @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5&limit=20&country=us";
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
@@ -69,6 +78,11 @@
              // Display error alert
          }
      }];
+
+    
+    // Added a loading view
+    
+ 
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -124,6 +138,22 @@
     [self presentViewController:self.details animated:YES completion:nil];
     
    }
+
+- (void)stopRefresh
+
+{
+    
+  //  [self.refreshControl endRefreshing];
+    
+}
+
+-(void)loadPage
+{
+    
+    [refresh endRefreshing];
+    [self.tableView reloadData];
+    
+}
 
 
 
