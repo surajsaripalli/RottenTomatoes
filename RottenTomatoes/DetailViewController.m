@@ -38,7 +38,8 @@
     NSString *desc = [userDefaults objectForKey:@"det"];
     self.mDetail.text =  desc;
     NSString *imgURL = [userDefaults objectForKey:@"img"];
-    [self.posterImg setImageWithURL:[NSURL URLWithString:imgURL]];
+    NSString *im = [imgURL stringByReplacingOccurrencesOfString:@"tmb" withString:@"org"];
+    [self.posterImg setImageWithURL:[NSURL URLWithString:im]];
     // Do any additional setup after loading the view from its nib.
 }
 
