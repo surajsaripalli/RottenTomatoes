@@ -11,6 +11,7 @@
 
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *posterImg;
+@property (weak, nonatomic) IBOutlet UIScrollView *detailsViewScroll;
 @property (weak, nonatomic) IBOutlet UITextView *mDetail;
 @property (weak, nonatomic) IBOutlet UILabel *movieDetail;
 @end
@@ -35,7 +36,7 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     NSString *desc = [userDefaults objectForKey:@"det"];
-    self.mDetail.text = desc;
+    self.mDetail.text =  desc;
     NSString *imgURL = [userDefaults objectForKey:@"img"];
     [self.posterImg setImageWithURL:[NSURL URLWithString:imgURL]];
     // Do any additional setup after loading the view from its nib.
