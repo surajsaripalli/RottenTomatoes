@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RottenTomatoes/MoviesViewController.m"
-            timestampString = "432769596.55871"
+            timestampString = "432789632.666079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RottenTomatoes/MoviesViewController.m"
-            timestampString = "432769864.774512"
+            timestampString = "432789632.666079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "-tableView:didDeselectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RottenTomatoes/MoviesViewController.m"
-            timestampString = "432769864.774512"
+            timestampString = "432789632.666079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "-didTapOnTableView:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RottenTomatoes/MoviesViewController.m"
-            timestampString = "432769864.774512"
+            timestampString = "432789632.666079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "-didTapOnTableView:"
             landmarkType = "5">
          </BreakpointContent>

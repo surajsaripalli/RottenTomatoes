@@ -10,6 +10,7 @@
 #import "MovieCell.h"
 #import "UIImageView+AFNetworking.h"
 #import "DetailViewController.h"
+#import "M13ProgressViewSegmentedBar.h"
 
 
 @interface MoviesViewController ()
@@ -32,6 +33,13 @@
     if (self) {
         
         self.title = @"Rotten Tomatoes" ;
+        
+        M13ProgressViewSegmentedBar* progressBar = [[M13ProgressViewSegmentedBar alloc]initWithFrame:CGRectMake(10.0, 0.0, 100.0, 20.0)];
+        progressBar.progressDirection = M13ProgressViewSegmentedBarProgressDirectionLeftToRight;
+        progressBar.indeterminate = YES;
+        progressBar.segmentShape = M13ProgressViewSegmentedBarSegmentShapeCircle;
+        
+        [self.view addSubview:progressBar];
         // Custom initialization
     }
     return self;
@@ -66,7 +74,7 @@
          
          // Hide the loading View
          
-        if(!connectionError)
+       if(!connectionError)
          {
              NSDictionary *object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
              self.movies = object[@"movies"];
@@ -123,6 +131,7 @@
 
 -(void) tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSLog(@"Here");
 }
 
@@ -141,15 +150,16 @@
     self.details = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
     [self presentViewController:self.details animated:YES completion:nil];
     
+    
    }
 
 - (void)stopRefresh
-
 {
     
   //  [self.refreshControl endRefreshing];
     
 }
+
 
 -(void)loadPage
 {
