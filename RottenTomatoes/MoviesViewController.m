@@ -11,11 +11,13 @@
 #import "UIImageView+AFNetworking.h"
 #import "DetailViewController.h"
 #import "M13ProgressViewSegmentedBar.h"
+#import "MBProgressHUD.h"
 
 
 @interface MoviesViewController ()
 {
     UIRefreshControl *refresh;
+    MBProgressHUD *HUD;
 
 }
 @property (weak, nonatomic) IBOutlet UILabel *errorMsg;
@@ -33,13 +35,7 @@
     if (self) {
         
         self.title = @"Rotten Tomatoes" ;
-        
-        M13ProgressViewSegmentedBar* progressBar = [[M13ProgressViewSegmentedBar alloc]initWithFrame:CGRectMake(10.0, 0.0, 100.0, 20.0)];
-        progressBar.progressDirection = M13ProgressViewSegmentedBarProgressDirectionLeftToRight;
-        progressBar.indeterminate = YES;
-        progressBar.segmentShape = M13ProgressViewSegmentedBarSegmentShapeCircle;
-        
-        [self.view addSubview:progressBar];
+    
         // Custom initialization
     }
     return self;
@@ -48,6 +44,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    [HUD show:YES];
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 125;
@@ -76,6 +77,8 @@
          
        if(!connectionError)
          {
+             self.errorMsg.hidden = true;
+             [HUD hide:YES];
              NSDictionary *object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
              self.movies = object[@"movies"];
              
