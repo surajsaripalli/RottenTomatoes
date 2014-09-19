@@ -9,3 +9,4 @@ Completed - Required : User sees error message when there's a networking error (
 Completed - Required : User can pull to refresh the movie list <br>
 Completed - Required : Must use Cocoapods <br>
 Completed - Required : Asynchronous image downloading must be implemented using the UIImageView category in the AFNetworking library. <br>
+Completed - Optional : Loading High Resolution Images in the Detail Page <br>
